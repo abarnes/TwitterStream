@@ -4,7 +4,7 @@
 
         $t = new ctwitter_stream();
 
-        $t->login('Consumer Key', 'Consumer Secret', 'Access Token', 'Access Secret');
+        $t->login('', '', '', '');
 
         $t->start(explode(",",urldecode($_POST['keywords'])));
     }

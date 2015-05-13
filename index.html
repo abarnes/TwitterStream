@@ -1,36 +1,14 @@
 <html>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>Twitter Live Stream</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://www.kunalbabre.com/projects/table2CSV.js"></script>
-
-    <script type="text/javascript" src="twitter_stream.js"></script>
-</html>
+        <title>Twitter Live Stream</title>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.kunalbabre.com/projects/table2CSV.js"></script>-->
+        <script type="text/javascript" src="build/react.js"></script>
+    </head>
 <body>
-    <div id="topbar">
-        <input type="text" value="shopify,ecwid,bigcommerce,volusion,vendevor,ecommerce" id="keywords">
-
-        <a href="javascript:void(0);" onclick="start_stream()" id="stream-control" class="standardbutton">Start Stream</a>
-
-        <div id="topbar-right">
-            <h3>Status: <span>Idle</span></h3>
-            <p id="timer">00:00:00</p>
-        </div>
-    </div>
-
-    <br>
-
-    <table id="stream-table">
-        <tr id="stream">
-            <th>Screen Name</th>
-            <th>Name</th>
-            <th>URL</th>
-            <th>Followers</th>
-            <th>Friends</th>
-            <th>Tweet</th>
-            <th>Action</th>
-            <th>Time (EST)</th>
-        </tr>
-    </table>
+    <div id="root"></div>
+    <script type="text/javascript" src="build/react-components.js"></script>
 </body>
+</html>

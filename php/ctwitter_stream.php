@@ -54,29 +54,6 @@ class ctwitter_stream
         return true;
     }
 
-    //
-    // process a tweet object from the stream
-    //
-    private function process_tweet(array $_data)
-    {
-        if ($_data['lang']=="en") {
-            $output = '<tr><td><a href="http://twitter.com/'.$_data['user']['screen_name'].'" target="_blank">'.$_data['user']['screen_name'].'</a></td>';
-            $output .= '<td>'.$_data['user']['name'].'</td>';
-            $output .= '<td><a href="'.$_data['user']['url'].'" target="_blank">'.$_data['user']['url'].'</a></td>';
-            $output .= '<td>'.$_data['user']['followers_count'].'</td>';
-            $output .= '<td>'.$_data['user']['friends_count'].'</td>';
-            $output .= '<td>'.$_data['text'].'</td>';
-            $output .='<td><a href="javascript:void(0);" class="delete_row">Delete</a></td>';
-            $output .= '<td>'.date('n/j g:i:s',strtotime($_data['created_at'])).'</td></tr>';
-
-            if (ob_get_level() == 0) ob_start();
-            echo $output;
-            ob_flush();
-            flush();
-        }
-
-        return true;
-    }
 
     //
     // the main stream manager
@@ -202,9 +179,7 @@ class ctwitter_stream
                     //
                     if ( ($json !== false) && (strlen($json) > 0) )
                     {
-                        //
-                        // decode the socket to a PHP array
-                        //
+
                         $data = json_decode($json, true);
                         if ($data)
                         {
@@ -213,6 +188,7 @@ class ctwitter_stream
                             //
                             if (is_array($data)) $this->process_tweet($data);
                         }
+
                     }
                 }
             }
@@ -222,5 +198,25 @@ class ctwitter_stream
         }
 
         return;
+    }
+
+    function process_tweet($data) {
+        $output = [
+            'text'=>$data['text'],
+            'created_at'=>date('n/j g:i:s',strtotime($data['created_at'])),
+            'user'=>[
+                'screen_name'=>$data['user']['screen_name'],
+                'url'=>$data['user']['url'],
+                'followers_count'=>$data['user']['followers_count'],
+                'friends_count'=>$data['user']['friends_count'],
+                'name'=>$data['user']['name']
+            ]
+        ];
+        if (ob_get_level() == 0) ob_start();
+        echo json_encode($output).',';
+        ob_flush();
+        flush();
+
+        return true;
     }
 };
