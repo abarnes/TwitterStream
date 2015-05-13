@@ -35,10 +35,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stream.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="stream.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stream.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="83" selection-start="192" selection-end="192" vertical-scroll-proportion="0.09625668">
+            <state line="6" column="83" selection-start="192" selection-end="192" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ctwitter_stream.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ctwitter_stream.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="16" selection-start="106" selection-end="114" vertical-scroll-proportion="0.07914439">
               <folding />
             </state>
           </provider>
@@ -279,7 +288,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/stream.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="83" selection-start="192" selection-end="192" vertical-scroll-proportion="0.09625668">
+        <state line="6" column="83" selection-start="192" selection-end="192" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ctwitter_stream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="106" selection-end="114" vertical-scroll-proportion="0.07914439">
           <folding />
         </state>
       </provider>
